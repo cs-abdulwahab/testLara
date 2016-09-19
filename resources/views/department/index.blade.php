@@ -18,6 +18,7 @@
                 <td>{{ $dept->dname  }}</td>
 
                 <td>{{ $dept->dloc  }}</td>
+
                 <td><a href="{{route('department.show', $dept->id) }}"  class="btn btn-info">View </a></td>
                 <td><a href="{{ route('department.edit', $dept->id) }}" class="btn btn-primary"> Edit </a></td>
                 <td>

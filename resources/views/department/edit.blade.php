@@ -28,6 +28,12 @@ this is the Edit blade
     </div>
 
     {!! Form::submit('Update Department', ['class' => 'btn btn-primary']) !!}
+
+
+    <a href= href="{{route('department.employee.show', $dept->id) }}" class="btn btn-primary">
+        Employee Detail
+    </a>
+
     {!! Form::close() !!}
 
 @stop
