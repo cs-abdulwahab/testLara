@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Department;
+
 
 use App\Department;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\DepartmentRequest;
-use App\Vehicle;
 use Illuminate\Http\Request;
-use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
@@ -20,9 +20,9 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-            $depts = Department::all();
+        $depts = Department::all();
 
-        return view('department.index',['depts' => $depts]);
+        return view('department.index', ['depts' => $depts]);
     }
 
     /**
@@ -38,16 +38,16 @@ class DepartmentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param DepartmentRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(DepartmentRequest $request)
     {
 
-       /* $this->validate($request, [
-            'dname' => 'required|max:255',
-            'dloc' => 'bail|required'
-        ]);*/
+        /* $this->validate($request, [
+             'dname' => 'required|max:255',
+             'dloc' => 'bail|required'
+         ]);*/
 
         $dept = new Department();
 
@@ -55,7 +55,7 @@ class DepartmentController extends Controller
         $dept->dloc = $request->input('dloc');
         $dept->save();
         // redirect
-        return Redirect::to('department'); ;
+        return Redirect::to('department');;
 
     }
 
@@ -69,8 +69,9 @@ class DepartmentController extends Controller
     {
 
         $dept = Department::find($id);
+        $emps = Department::all()->find($id)->employees()->get();
 
-        return View::make('department.show', compact('dept'));
+        return View::make('department.show', compact('dept','emps'));
     }
 
     /**
@@ -82,7 +83,8 @@ class DepartmentController extends Controller
     public function edit($id)
     {
         $dept = Department::find($id);
-        return view('department.edit',['dept' => $dept]);
+
+        return view('department.edit', ['dept' => $dept]);
     }
 
     /**
@@ -105,7 +107,7 @@ class DepartmentController extends Controller
         $dept->dloc = $request->input('dloc');
         $dept->save();
         // redirect
-        return Redirect::to('department'); ;
+        return Redirect::to('department');;
 
     }
 
@@ -117,15 +119,10 @@ class DepartmentController extends Controller
      */
     public function destroy($id)
     {
-
-
-
-
         $dept = Department::find($id);
-
         $dept->delete();
 
-       return Redirect::route('department.index');
+        return Redirect::route('department.index');
 
 
     }
