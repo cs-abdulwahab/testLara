@@ -7,13 +7,36 @@ this is the  show blade php   of department
     @parent
 
     <div class="panel panel-default">
-        <!-- Default panel contents -->
-        <div class="panel-heading">Panel heading</div>
-        <div class="panel-body">
-            <p>This is the Panel Body</p>
-        </div>
+    	  <div class="panel-heading">
+    			<h3 class="panel-title">Department Info </h3>
+    	  </div>
+    	  <div class="panel-body">
+              Department Name : {{$dept->dname}} <br/>
+              Department Location : {{$dept->dloc}} <br/>
 
-        Department Name : {{$dept->dname}} <br/>
-        Department Location : {{$dept->dloc}} <br/>
+          </div>
     </div>
+
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th> Ename</th>
+            <th> Username</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        @foreach($emps as $emp)
+            <tr>
+                <td> {{  $emp->ename  }}  </td>
+                <td> {{  $emp->ename  }}  </td>
+            </tr>
+        @endforeach
+
+        </tbody>
+    </table>
+
+
+
 @stop

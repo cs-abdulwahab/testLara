@@ -14,13 +14,18 @@ class vehicleSeeder extends Seeder
     public function run()
     {
         Eloquent::unguard(true);
-        Employee::all()->each(function ( $e) {
-            factory(Vehicle::class, 2)->times(2)->create(
+
+        $this->command->info("Vehicle Seeding please wait...");
+        Employee::all()->each(function ($e) {
+            factory(Vehicle::class)->times(2)->create(
                 [
                     'employee_id' => $e->id,
                 ]
+
             );
-        });
+        }
+
+        );
         $this->command->info("Vehicle table seeded :)");
         Eloquent::reguard();
 

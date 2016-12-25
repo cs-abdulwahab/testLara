@@ -16,7 +16,7 @@ use App\Employee;
 
 
 
-$factory->define(Employee::class, function (Faker\Generator $faker) {
+$factory->define(Employee::class, function (Generator $faker) {
     return [
         'ename' => $faker->name,
         'username' => $faker->safeEmail,

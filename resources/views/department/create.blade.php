@@ -11,6 +11,8 @@ this is the create blade
             </ul>
         </div>
     @endif
+
+
     {!! Form::open(['route' => 'department.store', 'method' => 'post']) !!}
 
     <div class="form-group">

@@ -4,6 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property array|string dname
+ * @property array|string dloc
+ */
 class Department extends Model
 {
     protected $table = 'departments';

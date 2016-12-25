@@ -7,7 +7,9 @@ use App\Department;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DepartmentRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 
 
@@ -20,8 +22,8 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $depts = Department::all();
-
+        $depts = Department::orderBy(Input::get('sort'), 'asc')->Paginate(10);
+        $depts ->appends(['sort' => 'dname'])->links();
         return view('department.index', ['depts' => $depts]);
     }
 
@@ -43,7 +45,6 @@ class DepartmentController extends Controller
      */
     public function store(DepartmentRequest $request)
     {
-
         /* $this->validate($request, [
              'dname' => 'required|max:255',
              'dloc' => 'bail|required'

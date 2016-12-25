@@ -16,3 +16,23 @@ use Illuminate\Http\Request;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
+
+//Route::get("/","FacultyController@index");
+
+// Route::resource("/faculty","FacultyController");
+
+
+
+Route::resource("room","RoomController",[
+                                        'only' => [  'store', 'show','update','destroy','index' ]
+                                        /*,'names'=>['store'=>'save']*/
+
+                                    ]
+);
+
+Route::get("room/{strength}",'RoomController@roomStrength'
+
+
+);
+
+// Route::resource("/car","Car\CarController");

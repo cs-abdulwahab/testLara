@@ -13,13 +13,24 @@ this is the Edit blade
     @endif
     {{--{{ dd($dept)  }}--}}
 
-
-    {!! Form::open(['route' => ['department.update', $dept->id], 'method' => 'patch']) !!}
-
+    {{ Form::model($dept) }}
 
     <div class="form-group">
         {!! Form::label('dname', 'DNAME :', ['class' => 'control-label']) !!}
-        {!! Form::text('dname',$dept->dname , ['class' => 'form-control']) !!}
+        {!! Form::text('dname' ,null, ['class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::label('dloc', 'DLOC:', ['class' => 'control-label']) !!}
+        {!! Form::text('dloc',null,   ['class' => 'form-control']) !!}
+    </div>
+    {{ Form::close() }}
+
+
+   {{-- {!! Form::open(['route' => ['department.update', $dept->id], 'method' => 'patch']) !!}
+    <div class="form-group">
+        {!! Form::label('dname', 'DNAME :', ['class' => 'control-label']) !!}
+        {!! Form::text('dname', $dept->dname , ['class' => 'form-control']) !!}
     </div>
 
     <div class="form-group">
@@ -28,12 +39,11 @@ this is the Edit blade
     </div>
 
     {!! Form::submit('Update Department', ['class' => 'btn btn-primary']) !!}
+    {!! Form::close() !!}--}}
 
-
-    <a href= href="{{route('department.employee.show', $dept->id) }}" class="btn btn-primary">
+    <a href="{{route('department.employee.index', compact('dept') ) }}" class="btn btn-primary">
         Employee Detail
     </a>
 
-    {!! Form::close() !!}
 
 @stop

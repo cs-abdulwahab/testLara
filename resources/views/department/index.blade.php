@@ -2,7 +2,7 @@
 
 @section('content')
 
-<a href="{{ route('department.create') }}" > Create a New Department </a>
+<a href="{{ route('department.create') }}"  class="btn btn-success" > Create a New Department </a>
 
     <table class="table table-striped table-hover">
         <thead>
@@ -18,8 +18,8 @@
                 <td>{{ $dept->dname  }}</td>
 
                 <td>{{ $dept->dloc  }}</td>
-
-                <td><a href="{{route('department.show', $dept->id) }}"  class="btn btn-info">View </a></td>
+                <td><a href="{{route('department.employee.index', $dept->id) }}"  class="btn btn-success">View Employees </a></td>
+                <td><a href="{{route('department.show', $dept->id) }}"  class="btn btn-info">View Dept</a></td>
                 <td><a href="{{ route('department.edit', $dept->id) }}" class="btn btn-primary"> Edit </a></td>
                 <td>
                         {!! Form::open([
@@ -33,7 +33,7 @@
             </tr>
 
         @endforeach
-
+        {{ $depts->links() }}
         </tbody>
     </table>
 @stop

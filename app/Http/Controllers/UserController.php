@@ -19,7 +19,7 @@ class UserController extends Controller
 
     public function show($id)
     {
-        $user = User::all0()->find($id);
+        $user = User::all()->find($id);
         $users = User::all();
 
         //  dd($users);

@@ -15,21 +15,27 @@ class departmentsTableSeeder extends Seeder
     public function run()
     {
 
-        DB::table('departments')->delete();
+        for ($i = 0; $i < 50 ; $i ++){
+            DB::table('cars')->insert([
+                'name' => str_random(10),
+                'price' => rand(5,10)
+            ]);
+        }
+//        DB::table('departments')->delete();
+
      /*   Department::all()->each(function ($d){
 
            $d->delete();
 
         });*/
 
-
-        $faker = Faker\Factory::create();
+        /*$faker = Faker\Factory::create();
 
         Eloquent::unguard(true);
-        factory(Department::class, 3)->create();
+        factory(Department::class, 300)->create();
 
         $this->command->info("Department table seeded :)");
 
-        Eloquent::reguard();
+        Eloquent::reguard();*/
     }
 }
