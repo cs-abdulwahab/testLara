@@ -30,9 +30,6 @@ Route::resource("room","RoomController",[
                                     ]
 );
 
-Route::get("room/{strength}",'RoomController@roomStrength'
-
-
-);
+Route::get("room/{strength}",'RoomController@roomStrength');
 
 // Route::resource("/car","Car\CarController");
