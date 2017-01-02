@@ -15,6 +15,7 @@ class VerifyCsrfToken extends BaseVerifier
         'api/employee/*',
         'department/*',
         'faculty/*',
+        '/*',
         /*'api/room/*',*/
 
     ];

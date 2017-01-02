@@ -75,7 +75,14 @@
 
     <div class="content">
         <div class="title m-b-md">
-            Laravel test
+
+            {{ Form::open(['url' => 'upload', 'files' => true]) }}
+
+            {{ Form::file('imgfile')  }}
+
+            {{  Form::submit('Click Me!') }}
+            {{ Form::close()  }}
+
         </div>
 
         <div class="links">

@@ -77,3 +77,11 @@ Route::get('/home', 'HomeController@index');*/
 
 Auth::routes();
 Route::get('/home', 'HomeController@index');
+
+Route::get('/', function (){
+
+    return View::make('welcome');
+
+});
+
+Route::post('upload','UploadController@upload');
