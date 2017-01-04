@@ -17,11 +17,15 @@ class CreateEmployeesTable extends Migration
             $table->increments('id');
             $table->string('ename');
             $table->string('username');
+
+
             $table->integer('department_id')->unsigned();
+
             $table->foreign('department_id')
                 ->references('id')
                 ->on('departments')
-                ->onDelete('cascade');;
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
 

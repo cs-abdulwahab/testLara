@@ -16,13 +16,6 @@ class RoomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        echo 'index method why ';
-        // return Room::all();
-
-    }
-
 
     /**
      * Show the form for creating a new resource.
@@ -34,7 +27,14 @@ class RoomController extends Controller
         //
     }
 
-    /**
+    /** public function index()
+    {
+    echo 'index method why ';
+    // return Room::all();
+
+    }
+
+
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
