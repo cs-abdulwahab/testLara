@@ -15,6 +15,13 @@ class Employee extends Model
     ];
 
 
+    public function getProfilePicAttribute ($value)
+    {
+        return $this->attributes['profilepic'];
+
+    }
+
+
     public function getEnameAttribute($value)
     {
         return ucfirst($value);

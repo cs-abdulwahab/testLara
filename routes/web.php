@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -76,7 +77,10 @@ Route::get('/home', 'HomeController@index');*/
 
 
 Auth::routes();
+
 Route::get('/home', 'HomeController@index');
+
+Route::resource('employee','Employee\EmployeeController');
 
 Route::get('/', function (){
 

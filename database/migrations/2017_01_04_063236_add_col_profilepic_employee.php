@@ -16,7 +16,7 @@ class AddColProfilepicEmployee extends Migration
         Schema::table('employees', function($table)
         {
 
-            $table->string('profilepic', 100);
+            $table->string('profilepic', 500)->nullable();
 
         });
     }
