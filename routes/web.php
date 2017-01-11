@@ -80,12 +80,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::resource('employee','Employee\EmployeeController');
+// Route::resource('employee','Employee\EmployeeController');
 
 Route::get('/', function (){
 
     return View::make('welcome');
 
 });
+
+
+
 
 Route::post('upload','UploadController@upload');

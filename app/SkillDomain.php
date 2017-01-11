@@ -7,4 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class SkillDomain extends Model
 {
     //
+
+
+    public function SoftwareHouse(){
+
+        return $this->belongsToMany(SkillDomain::class);
+
+    }
 }
