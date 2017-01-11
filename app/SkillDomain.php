@@ -11,7 +11,7 @@ class SkillDomain extends Model
 
     public function SoftwareHouse(){
 
-        return $this->belongsToMany(SkillDomain::class);
+        return $this->belongsToMany('App\SoftwareHouse');
 
     }
 }
