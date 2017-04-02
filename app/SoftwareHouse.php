@@ -7,10 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class SoftwareHouse extends Model
 {
 
+// Needs to be mentioned  otherwise it will be expecting  skill_domains
+    protected $table = 'softwarehouses';
 
-    public function skill_domains(){
+    protected $fillable = ['name', 'desc', 'url'];
 
-        return $this->belongsToMany('App\SkillDomain');
 
+    public function skills()
+    {
+
+        return $this->belongsToMany(SkillDomain::class, 'skilldomain_softwarehouse', 'skilldomain_id', 'softwarehouse_id')->withTimestamps();
     }
 }

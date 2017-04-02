@@ -165,6 +165,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Vinkla\Pusher\PusherServiceProvider::class,
 
 
         /*
@@ -177,12 +178,16 @@ return [
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
+
         App\Providers\BroadcastServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
+
+        // Package Service Providers
+      //  TCG\Voyager\VoyagerServiceProvider::class,
 
     ],
 

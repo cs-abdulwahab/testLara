@@ -21,8 +21,6 @@ class UploadController extends Controller
             request()->file('imgfile')->store('avatars');
 
 
-
-
 //            $file->move('uploads',$file->getClientOriginalName());
 
   //          echo $file->getClientOriginalName();

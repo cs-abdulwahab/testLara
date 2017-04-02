@@ -21,15 +21,15 @@ Route::get('/user', function (Request $request) {
 
 // Route::resource("/faculty","FacultyController");
 
-
+/*
 
 Route::resource("room","RoomController",[
                                         'only' => [  'store', 'show','update','destroy','index' ]
                                         /*,'names'=>['store'=>'save']*/
-
+/*
                                     ]
 );
 
-Route::get("room/{strength}",'RoomController@roomStrength');
+Route::get("room/{strength}",'RoomController@roomStrength');*/
 
 // Route::resource("/car","Car\CarController");

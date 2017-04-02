@@ -6,12 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class SkillDomain extends Model
 {
-    //
+    // Needs to be mentioned  otherwise it will be expecting  skill_domains
+    protected $table = 'skilldomains';
+
+    protected $fillable = ['name'];
 
 
-    public function SoftwareHouse(){
+    public function softwareHouses(){
 
-        return $this->belongsToMany('App\SoftwareHouse');
+        return $this->belongsToMany(SoftwareHouse::class);
 
     }
 }

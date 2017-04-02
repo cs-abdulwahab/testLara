@@ -45,7 +45,7 @@
 });
 
 */
-// Route::resource("/room","RoomController");
+ // Route::resource("/room","RoomController");
 /*
 Route::get('/dep{Department}', function (\App\Department $department) {
     return $department->dname;
@@ -75,10 +75,10 @@ Route::resource('test', 'UserController');*/
 /*Auth::routes();
 Route::get('/home', 'HomeController@index');*/
 
-
+/*
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@index');*/
 
 // Route::resource('employee','Employee\EmployeeController');
 
@@ -88,7 +88,39 @@ Route::get('/', function (){
 
 });
 
+Route::get('/bridge', function() {
+    $pusher = App::make('pusher');
+
+//    $pusher->trigger( 'test-channel',
+//        'test-event',
+//        array('text' => 'Preparing the Pusher Laracon.eu workshop!'));
+
+    for($i=0 ;$i< 5 ; $i++)
+    {
+         $pusher->trigger( 'test-channel',            'test-event',            array('text' => 'i = '.$i ));
+       // echo 'i = '.$i.'<br/>';
+    }
 
 
+    return view('welcome');
+});
 
-Route::post('upload','UploadController@upload');
+Route::resource('softwarehouse','SoftwareHouseController');
+
+Route::get('softwarehouse', 'SoftwareHouseController@index' )->middleware('auth');
+
+
+// Route::post('upload','UploadController@upload');
+
+
+/*Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});*/
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

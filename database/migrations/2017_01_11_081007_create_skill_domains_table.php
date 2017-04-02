@@ -14,7 +14,7 @@ class CreateSkillDomainsTable extends Migration
     public function up()
     {
 
-        Schema::create('skill_domains', function (Blueprint $table) {
+        Schema::create('skilldomains', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
             $table->timestamps();
@@ -30,6 +30,6 @@ class CreateSkillDomainsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('skill_domains');
+        Schema::dropIfExists('skilldomains');
     }
 }

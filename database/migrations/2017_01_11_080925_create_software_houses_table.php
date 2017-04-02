@@ -13,7 +13,7 @@ class CreateSoftwareHousesTable extends Migration
      */
     public function up()
     {
-        Schema::create('software_houses', function (Blueprint $table) {
+        Schema::create('softwarehouses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',100)->unique();
             $table->string('desc',500);
@@ -33,6 +33,6 @@ class CreateSoftwareHousesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('software_houses');
+        Schema::dropIfExists('softwarehouses');
     }
 }
