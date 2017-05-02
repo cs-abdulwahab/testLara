@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Car;
 use App\Faculty;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Response;
 
 class FacultyController extends Controller
 {
@@ -20,15 +22,7 @@ class FacultyController extends Controller
       //  return Faculty::all();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return 'create method';
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -43,7 +37,19 @@ class FacultyController extends Controller
 
         $faculty->name  = $request->input('name');
         $faculty->email = $request->input('email');
-        return $faculty->save();
+
+
+
+
+       /* $car = new Car();
+        $car->name ='car1';
+        $car->price =123;*/
+
+       // $faculty->cars()->attach($car);
+         $faculty->save();
+
+        return response()->json();
+
 
     }
 

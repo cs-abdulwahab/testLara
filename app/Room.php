@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Room extends Model
 {
 
+    protected $table = "rooms";
+
     protected $fillable = ["name", "strength"];
 
     public function getNameAttribute($name){

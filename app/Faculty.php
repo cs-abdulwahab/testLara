@@ -9,10 +9,13 @@ class Faculty extends Model
 
     // protected $table = 'faculties';
 
-    protected $fillable = ['name','email'];
+    protected $fillable = ['name', 'email'];
 
 
-
+    public function cars()
+    {
+        return $this->belongsToMany(Car::class);
+    }
 
 
 }

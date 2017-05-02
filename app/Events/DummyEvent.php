@@ -11,16 +11,14 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 class DummyEvent
 {
-    use InteractsWithSockets, SerializesModels;
-
     /**
      * Create a new event instance.
      *
      * @return void
      */
+
     public function __construct()
     {
-        //
     }
 
     /**
@@ -30,6 +28,9 @@ class DummyEvent
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-name');
+
+
+
+         return 'Dummy-channel-name';
     }
 }

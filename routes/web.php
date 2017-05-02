@@ -13,16 +13,12 @@
 */
 
 
-
-
 /*Route::get('/user',function(){
     return 'this is the message';
 });*/
 
 
-
-
-// Route::resource("/faculty","FacultyController");
+Route::resource("/faculty", "FacultyController", ['except' => ['create', 'edit', 'update']]);
 
 
 // Route::resource("/car","Car\CarController");
@@ -45,7 +41,7 @@
 });
 
 */
- // Route::resource("/room","RoomController");
+// Route::resource("/room","RoomController");
 /*
 Route::get('/dep{Department}', function (\App\Department $department) {
     return $department->dname;
@@ -82,32 +78,69 @@ Route::get('/home', 'HomeController@index');*/
 
 // Route::resource('employee','Employee\EmployeeController');
 
-Route::get('/', function (){
+use App\Events\DummyEvent;
+use App\Jobs\sendPushMessages;
+use App\Jobs\sendWelcomeMail;
+use Illuminate\Support\Facades\Input;
+
+
+Route::get('/', function () {
 
     return View::make('welcome');
 
 });
 
-Route::get('/bridge', function() {
+
+// Route::post('/finger', 'FingerController@store');
+
+
+//
+//Route::get('/sendmail', function () {
+//
+//    echo 'asd';
+//    Log::info("Request cycle without Queues started");
+//     Mail::send('email.welcome', ['data'=>'data'], function ($message) {
+//
+//         $message->from('bill@gates.com', 'Bill Gates');
+//
+//         $message->to('cs.abdulwahab@gmail.com');
+//
+//     });
+//     Log::info("Request cycle without Queues finished");
+//
+//    Log::info("Request Cycle with Queues Begins");
+//    dispatch(new sendWelcomeMail());
+//    Log::info("Request Cycle with Queues Ends");
+//
+//
+//});
+
+
+//
+/*
+Route::get('/bridge', function () {
     $pusher = App::make('pusher');
 
 //    $pusher->trigger( 'test-channel',
 //        'test-event',
 //        array('text' => 'Preparing the Pusher Laracon.eu workshop!'));
 
-    for($i=0 ;$i< 5 ; $i++)
-    {
-         $pusher->trigger( 'test-channel',            'test-event',            array('text' => 'i = '.$i ));
-       // echo 'i = '.$i.'<br/>';
-    }
+      for($i=0 ;$i< 5 ; $i++)
+      {
+           $pusher->trigger( 'test-channel',            'test-event',            array('text' => 'i = '.$i ));
+         // echo 'i = '.$i.'<br/>';
+      }
 
+    // event(new DummyEvent());
+    dispatch(new sendPushMessages());
+    echo 'dispatched messages ';
 
     return view('welcome');
 });
 
-Route::resource('softwarehouse','SoftwareHouseController');
+Route::resource('softwarehouse', 'SoftwareHouseController');
 
-Route::get('softwarehouse', 'SoftwareHouseController@index' )->middleware('auth');
+Route::get('softwarehouse', 'SoftwareHouseController@index')->middleware('auth');*/
 
 
 // Route::post('upload','UploadController@upload');
@@ -119,8 +152,18 @@ Route::get('softwarehouse', 'SoftwareHouseController@index' )->middleware('auth'
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+// Authentication Routes...
+//Route::get('login', 'Auth\LoginController@showLoginForm')->name('customlogin');
 
-Auth::routes();
+Route::post('login', 'UserController@authenticate')->name('customlogin');
 
-Route::get('/home', 'HomeController@index');
+Route::post('/register', 'UserController@register');
+
+Route::get('session', 'UserController@session');
+Route::get('tession', 'UserController@tession');
+
+//Route::get('/home', 'HomeController@index');
+
+//Auth::routes();
+//
+//Route::get('/home', 'HomeController@index');

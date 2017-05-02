@@ -28,13 +28,11 @@ class RoomController extends Controller
     }
 
     /** public function index()
-    {
-    echo 'index method why ';
-    // return Room::all();
-
-    }
-
-
+     * {
+     * echo 'index method why ';
+     * // return Room::all();
+     *
+     * }
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
@@ -42,19 +40,19 @@ class RoomController extends Controller
      */
     public function store(Request $request)
     {
-       // echo ' this is the store method ';
+        // echo ' this is the store method ';
 
-      $room = new Room();
+        $room = new Room();
 
         $room->name = $request->name;
         $room->strength = $request->strength;
 
-       // echo response()->json([], 409);
+        // echo response()->json([], 409);
 
 
         $room->save();
 
-      // return 'successfull';
+        // return 'successfull';
     }
 
 
@@ -67,7 +65,7 @@ class RoomController extends Controller
     public function show($id)
     {
 
-       $r =    Room::all()->first();
+        $r = Room::all()->first();
 
         return Room::all()->find($id);
     }

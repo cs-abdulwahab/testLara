@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -30,6 +31,14 @@ class sendPushMessages implements ShouldQueue
      */
     public function handle()
     {
-        //
+        $pusher = App::make('pusher');
+
+        echo 'send push message aysnc way';
+
+
+        for ($i = 0; $i < 50; $i++) {
+            $pusher->trigger('async-channel', 'Testingasync-event', array('text' => 'i = ' . $i));
+            // echo 'i = '.$i.'<br/>';
+        }
     }
 }

@@ -7,6 +7,14 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvi
 
 class EventServiceProvider extends ServiceProvider
 {
+
+
+    protected $subscribe = [
+
+        'App\Listeners\UserEventSubscriber',
+    ];
+
+
     /**
      * The event listener mappings for the application.
      *
@@ -31,6 +39,16 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
+        Event::listen('event.name', function ($foo, $bar) {
+            echo 'event.name foo is  '.$foo.'  and bar is '.$bar;
+
+           });
+
+
         //
     }
+
+
+
+
 }
