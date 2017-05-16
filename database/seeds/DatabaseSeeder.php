@@ -17,7 +17,10 @@ class DatabaseSeeder extends Seeder
 //        $this->call(vehicleSeeder::class);
 //
 
-        $this->call(RoomSeeder::class);
+
+      //  $this->call(RoomSeeder::class);
+
+        $this->call(RolesTableSeeder::class);
 
     }
 }

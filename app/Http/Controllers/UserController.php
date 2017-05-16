@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Role;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
@@ -25,12 +26,16 @@ class UserController extends Controller
 
     public function show($id)
     {
-        $user = User::all()->find($id);
-        $users = User::all();
+        /* $user = User::all()->find($id);
+         $users = User::all();*/
 
         //  dd($users);
 
-        return view('user.index', compact('users', $users));
+        $user = User::findOrFail($id);
+
+        return $user;
+
+        //   return view('user.index', compact('users', $users));
 
     }
 
@@ -104,14 +109,25 @@ class UserController extends Controller
 
         // dd( $credentials );
 
-      //  echo 'user controller authenticate function ';
+        //  echo 'user controller authenticate function ';
 
-        return User::create([
+        $user = new User([
             'name' => $credentials['username'],
             'api_token' => str_random(60),
             'email' => str_random(60) . '@dummy.com',
             'password' => bcrypt($credentials['password']),
+
         ]);
+
+        $role = Role::find(2);
+
+        // echo $role;
+
+        $user->role()->associate($role);
+
+        echo $user;
+
+        $user->saveOrFail();
 
 
     }

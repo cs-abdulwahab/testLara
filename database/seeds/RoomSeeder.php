@@ -11,7 +11,7 @@ class RoomSeeder extends Seeder
      */
     public function run()
     {
-        $this->command->info("Room Seeding please wait...");
+     /*   $this->command->info("Room Seeding please wait...");
 
 // use the factory to create a Faker\Generator instance
         $faker = Faker\Factory::create();
@@ -29,6 +29,6 @@ class RoomSeeder extends Seeder
         }*/
 
 
-        $this->command->info("Room Seeding completed !!! ");
+        /*$this->command->info("Room Seeding completed !!! ");*/
     }
 }

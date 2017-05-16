@@ -155,6 +155,7 @@ Auth::routes();
 // Authentication Routes...
 //Route::get('login', 'Auth\LoginController@showLoginForm')->name('customlogin');
 
+Route::get('user/{id}', 'UserController@show');
 Route::post('login', 'UserController@authenticate')->name('customlogin');
 
 Route::post('/register', 'UserController@register');
