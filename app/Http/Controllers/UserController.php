@@ -75,6 +75,7 @@ class UserController extends Controller
             // $request->session()->set('asd', 'asdvalue');
 
 
+
             echo 'validate \n hai ';
         } else {
             echo 'validate nahi hoip';

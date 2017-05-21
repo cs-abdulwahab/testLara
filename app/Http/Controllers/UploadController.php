@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Input;
 
 class UploadController extends Controller
 {
-    public function upload(){
+    public function upload(Request $request){
 
 
         if (Input::hasFile('imgfile')){
@@ -17,6 +17,7 @@ class UploadController extends Controller
             echo 'has file ';
 
             echo request()->file('imgfile')->getClientOriginalName();
+            echo $request->file('imgfile')->
 
             request()->file('imgfile')->store('avatars');
 
