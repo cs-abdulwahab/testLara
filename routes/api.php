@@ -21,6 +21,13 @@ Route::get('/user', function (Request $request) {
 
 
 
+Route::get('user/{id}', 'UserController@show');
+Route::post('login', 'UserController@authenticate')->name('customlogin');
+
+Route::post('/register', 'UserController@register');
+
+
+
 
 
 //Route::get("/","FacultyController@index");
