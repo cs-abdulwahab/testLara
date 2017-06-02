@@ -18,7 +18,7 @@ class Faculty extends Model
     }
 
 
-    public function papers()
+    public function clubs()
     {
         return $this->belongsToMany(Club::class);
     }
