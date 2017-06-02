@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
         Commands\HappyBirthday::class,
         Commands\SendChatMessage::class,
         Commands\generateDummy::class,
+        \Laravel\Tinker\Console\TinkerCommand::class,
 
     ];
 

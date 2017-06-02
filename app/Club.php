@@ -16,6 +16,6 @@ class Club extends Model
     public function faculties()
     {
 
-        return $this->belongsToMany(Faculty::class);
+        return $this->belongsToMany(Faculty::class)->using(ClubFaculty::class);
     }
 }

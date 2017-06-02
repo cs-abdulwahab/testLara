@@ -20,7 +20,7 @@ class Faculty extends Model
 
     public function clubs()
     {
-        return $this->belongsToMany(Club::class);
+        return $this->belongsToMany(Club::class)->using(ClubFaculty::class);
     }
 
 

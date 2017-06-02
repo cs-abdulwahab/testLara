@@ -167,7 +167,7 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Vinkla\Pusher\PusherServiceProvider::class,
 
-
+        Laravel\Tinker\TinkerServiceProvider::class,
         /*
          * Package Service Providers...
          */
