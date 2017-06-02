@@ -18,4 +18,10 @@ class Faculty extends Model
     }
 
 
+    public function papers()
+    {
+        return $this->belongsToMany(Club::class);
+    }
+
+
 }
