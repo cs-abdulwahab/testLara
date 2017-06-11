@@ -17,6 +17,10 @@ class CreateClubFacultyPivotTable extends Migration
             $table->foreign('club_id')->references('id')->on('clubs')->onDelete('cascade');
             $table->integer('faculty_id')->unsigned()->index();
             $table->foreign('faculty_id')->references('id')->on('faculties')->onDelete('cascade');
+
+            $table->boolean('flag')->default(false);
+
+
             $table->primary(['club_id', 'faculty_id']);
         });
     }

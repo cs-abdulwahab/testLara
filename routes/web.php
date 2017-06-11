@@ -168,3 +168,40 @@ Route::get('tession', 'UserController@tession');
 //Auth::routes();
 //
 //Route::get('/home', 'HomeController@index');
+
+
+            Route::get('/clubs', 'ClubsController@index');
+            Route::get('/clubs/create', 'ClubsController@create');
+            Route::post('/clubs', 'ClubsController@store');
+            Route::get('/clubs/{club}/edit', 'ClubsController@edit');
+            Route::post('/clubs/{club}', 'ClubsController@update');
+            Route::get('/clubs/{club}/delete', 'ClubsController@delete');
+    
+        
+
+            Route::get('/skilldomains', 'SkilldomainsController@index');
+            Route::get('/skilldomains/create', 'SkilldomainsController@create');
+            Route::post('/skilldomains', 'SkilldomainsController@store');
+            Route::get('/skilldomains/{skilldomain}/edit', 'SkilldomainsController@edit');
+            Route::post('/skilldomains/{skilldomain}', 'SkilldomainsController@update');
+            Route::get('/skilldomains/{skilldomain}/delete', 'SkilldomainsController@delete');
+    
+        
+
+            Route::get('/faculties', 'FacultiesController@index');
+            Route::get('/faculties/create', 'FacultiesController@create');
+            Route::post('/faculties', 'FacultiesController@store');
+            Route::get('/faculties/{faculty}/edit', 'FacultiesController@edit');
+            Route::post('/faculties/{faculty}', 'FacultiesController@update');
+            Route::get('/faculties/{faculty}/delete', 'FacultiesController@delete');
+    
+        
+
+            Route::get('/table1s', 'Table1sController@index');
+            Route::get('/table1s/create', 'Table1sController@create');
+            Route::post('/table1s', 'Table1sController@store');
+            Route::get('/table1s/{table1}/edit', 'Table1sController@edit');
+            Route::post('/table1s/{table1}', 'Table1sController@update');
+            Route::get('/table1s/{table1}/delete', 'Table1sController@delete');
+    
+        

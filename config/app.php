@@ -168,6 +168,8 @@ return [
         Vinkla\Pusher\PusherServiceProvider::class,
 
         Laravel\Tinker\TinkerServiceProvider::class,
+        Agustind\Crud\CrudServiceProvider::class,
+        CrestApps\CodeGenerator\CodeGeneratorServiceProvider::class,
         /*
          * Package Service Providers...
          */

@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2017-05-21.
+    * Generated on 2017-06-03.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -39,6 +39,9 @@ namespace PHPSTORM_META {
             'view' instanceof \Illuminate\View\Factory,
             'view.finder' instanceof \Illuminate\View\FileViewFinder,
             'view.engine.resolver' instanceof \Illuminate\View\Engines\EngineResolver,
+            'pusher.factory' instanceof \Vinkla\Pusher\PusherFactory,
+            'pusher' instanceof \Vinkla\Pusher\PusherManager,
+            'pusher.connection' instanceof \Pusher,
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
             'command.ide-helper.models' instanceof \Barryvdh\LaravelIdeHelper\Console\ModelsCommand,
             'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
@@ -132,6 +135,7 @@ namespace PHPSTORM_META {
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
             'html' instanceof \Collective\Html\HtmlBuilder,
             'form' instanceof \Collective\Html\FormBuilder,
+            'command.tinker' instanceof \Laravel\Tinker\Console\TinkerCommand,
         ],
         \Illuminate\Contracts\Container\Container::make('') => [
             '' == '@',
@@ -163,6 +167,9 @@ namespace PHPSTORM_META {
             'view' instanceof \Illuminate\View\Factory,
             'view.finder' instanceof \Illuminate\View\FileViewFinder,
             'view.engine.resolver' instanceof \Illuminate\View\Engines\EngineResolver,
+            'pusher.factory' instanceof \Vinkla\Pusher\PusherFactory,
+            'pusher' instanceof \Vinkla\Pusher\PusherManager,
+            'pusher.connection' instanceof \Pusher,
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
             'command.ide-helper.models' instanceof \Barryvdh\LaravelIdeHelper\Console\ModelsCommand,
             'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
@@ -256,6 +263,7 @@ namespace PHPSTORM_META {
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
             'html' instanceof \Collective\Html\HtmlBuilder,
             'form' instanceof \Collective\Html\FormBuilder,
+            'command.tinker' instanceof \Laravel\Tinker\Console\TinkerCommand,
         ],
         \App::make('') => [
             '' == '@',
@@ -287,6 +295,9 @@ namespace PHPSTORM_META {
             'view' instanceof \Illuminate\View\Factory,
             'view.finder' instanceof \Illuminate\View\FileViewFinder,
             'view.engine.resolver' instanceof \Illuminate\View\Engines\EngineResolver,
+            'pusher.factory' instanceof \Vinkla\Pusher\PusherFactory,
+            'pusher' instanceof \Vinkla\Pusher\PusherManager,
+            'pusher.connection' instanceof \Pusher,
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
             'command.ide-helper.models' instanceof \Barryvdh\LaravelIdeHelper\Console\ModelsCommand,
             'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
@@ -380,6 +391,7 @@ namespace PHPSTORM_META {
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
             'html' instanceof \Collective\Html\HtmlBuilder,
             'form' instanceof \Collective\Html\FormBuilder,
+            'command.tinker' instanceof \Laravel\Tinker\Console\TinkerCommand,
         ],
         \app('') => [
             '' == '@',
@@ -411,6 +423,9 @@ namespace PHPSTORM_META {
             'view' instanceof \Illuminate\View\Factory,
             'view.finder' instanceof \Illuminate\View\FileViewFinder,
             'view.engine.resolver' instanceof \Illuminate\View\Engines\EngineResolver,
+            'pusher.factory' instanceof \Vinkla\Pusher\PusherFactory,
+            'pusher' instanceof \Vinkla\Pusher\PusherManager,
+            'pusher.connection' instanceof \Pusher,
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
             'command.ide-helper.models' instanceof \Barryvdh\LaravelIdeHelper\Console\ModelsCommand,
             'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
@@ -504,6 +519,7 @@ namespace PHPSTORM_META {
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
             'html' instanceof \Collective\Html\HtmlBuilder,
             'form' instanceof \Collective\Html\FormBuilder,
+            'command.tinker' instanceof \Laravel\Tinker\Console\TinkerCommand,
         ],
     ];
 }
