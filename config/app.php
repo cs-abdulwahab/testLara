@@ -167,6 +167,9 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Vinkla\Pusher\PusherServiceProvider::class,
 
+
+
+        Orangehill\Iseed\IseedServiceProvider::class,
         Laravel\Tinker\TinkerServiceProvider::class,
         Agustind\Crud\CrudServiceProvider::class,
         CrestApps\CodeGenerator\CodeGeneratorServiceProvider::class,
