@@ -20,6 +20,8 @@
 
 Route::resource("/faculty", "FacultyController", ['except' => ['create', 'edit', 'update']]);
 
+Route::resource("/helmets","HelmetController");
+
 
 // Route::resource("/car","Car\CarController");
 
