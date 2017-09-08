@@ -1,7 +1,7 @@
 0 info it worked if it ends with ok
 1 verbose cli [ 'D:\\Program Files\\nodejs\\node.exe',
 1 verbose cli   'D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
-1 verbose cli   'run-script',
+1 verbose cli   'run',
 1 verbose cli   'dev' ]
 2 info using npm@3.10.10
 3 info using node@v6.10.3
@@ -29,7 +29,7 @@
 15 verbose pkgid @
 16 verbose cwd D:\laragoninstallation\www\testLara
 17 error Windows_NT 6.1.7601
-18 error argv "D:\\Program Files\\nodejs\\node.exe" "D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run-script" "dev"
+18 error argv "D:\\Program Files\\nodejs\\node.exe" "D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "dev"
 19 error node v6.10.3
 20 error npm  v3.10.10
 21 error code ELIFECYCLE

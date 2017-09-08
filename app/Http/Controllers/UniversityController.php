@@ -14,7 +14,7 @@ class UniversityController extends Controller
      */
     public function index()
     {
-        //
+        return University::all();
     }
 
     /**
@@ -30,7 +30,7 @@ class UniversityController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -41,18 +41,18 @@ class UniversityController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\University  $university
+     * @param  \App\University $university
      * @return \Illuminate\Http\Response
      */
     public function show(University $university)
     {
-        //
+        return $university;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\University  $university
+     * @param  \App\University $university
      * @return \Illuminate\Http\Response
      */
     public function edit(University $university)
@@ -63,8 +63,8 @@ class UniversityController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\University  $university
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\University $university
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, University $university)
@@ -75,11 +75,12 @@ class UniversityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\University  $university
+     * @param  \App\University $university
      * @return \Illuminate\Http\Response
      */
     public function destroy(University $university)
     {
-        //
+     echo 'delete method';
+
     }
 }
