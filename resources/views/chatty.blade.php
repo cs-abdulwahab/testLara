@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
+
+
 @section('content')
     <div id="container" class="container" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+
 
         @component('jumbotron')
             @slot('title')

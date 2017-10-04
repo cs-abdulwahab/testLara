@@ -167,9 +167,6 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Vinkla\Pusher\PusherServiceProvider::class,
 
-
-
-        Orangehill\Iseed\IseedServiceProvider::class,
         Laravel\Tinker\TinkerServiceProvider::class,
         Agustind\Crud\CrudServiceProvider::class,
         CrestApps\CodeGenerator\CodeGeneratorServiceProvider::class,
@@ -189,10 +186,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-
+        ConsoleTVs\Charts\ChartsServiceProvider::class,
+        Khill\Lavacharts\Laravel\LavachartsServiceProvider::class
 
         // Package Service Providers
-      //  TCG\Voyager\VoyagerServiceProvider::class,
+        //  TCG\Voyager\VoyagerServiceProvider::class,
 
     ],
 
@@ -242,6 +240,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Lava' => Khill\Lavacharts\Laravel\LavachartsFacade::class,
+        'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
 
 
     ],

@@ -28,6 +28,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\DummyEvent' => [
             'App\Listeners\DummyEventListener',
         ],
+        'App\Events\SummyEvent' => [
+            'App\Listeners\SummyEventListener',
+        ],
     ];
 
     /**
@@ -40,15 +43,13 @@ class EventServiceProvider extends ServiceProvider
         parent::boot();
 
         Event::listen('event.name', function ($foo, $bar) {
-            echo 'event.name foo is  '.$foo.'  and bar is '.$bar;
+            echo 'event.name foo is  ' . $foo . '  and bar is ' . $bar;
 
-           });
+        });
 
 
         //
     }
-
-
 
 
 }

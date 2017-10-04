@@ -1,4 +1,3 @@
-
 window._ = require('lodash');
 
 /**
@@ -16,8 +15,12 @@ require('bootstrap-sass');
  * and simple, leaving you to focus on building your next great project.
  */
 
+
 window.Vue = require('vue');
-require('vue-resource');
+
+
+/*require('vue-resource');
+*/
 
 /**
  * We'll register a HTTP interceptor to attach the "CSRF" header to each of
